@@ -1,11 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vana Lakshmi Portfolio</title>
 </head>
+
 <body>
-    
+    <h1>bharathiiii...</h1>
+
+
+    <!-- CURSOR DESIGN -->
+
+    <style>
+        html {
+            cursor: none;
+        }
+
+        .circle {
+            width: 15px;
+            height: 15px;
+            background-color: black;
+            border-radius: 50%;
+            position: fixed;
+            z-index: 100000;
+            pointer-events: none;
+            /*Ensure circles don't interfere with cursor events*/
+            /* cursor: ; */
+            transition: transform 0.2s ease;
+        }
+    </style>
+
+    <!-- Add multiple circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <script>
+        const coords = {
+            x: 0,
+            y: 0
+        };
+        const circles = document.querySelectorAll(".circle");
+        const colors = [
+        "#ff0000", "#ff3800", "#ff5300", "#ff6800", "#ff7b00", "#ff8c00", "#ff9d00", "#ffad00", "#ffbc00", "#ffcb00", "#ffda13", "#ffe82e"
+
+        ];
+
+
+
+
+        // flame themed gradient
+        "#ff0000", "#ff3800", "#ff5300", "#ff6800", "#ff7b00", "#ff8c00", "#ff9d00", "#ffad00", "#ffbc00", "#ffcb00", "#ffda13", "#ffe82e"
+
+        //      blue theme
+        // "#384472",
+        // "#3c507b",
+        // "#415c84",
+        // "#48688c",
+        // "#517494",
+        // "#5c809b",
+        // "#688ca2",
+        // "#7598aa",
+        // "#83a4b1",
+        // "#92afb8",
+        // "#a2bbc0",
+        // "#b2c6c9"
+
+
+        // RED YELLOW THEMED
+        // "#5c0004", "#70160b", "#83290e", "#963b0f", "#a74e10", "#b8620f", "#c8770f", "#d68c10", "#e3a212", "#eeb918", "#f8d022", "#ffe82e"
+
+        // Initialize circle positions
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
+
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
+
+        window.addEventListener("click", () => {
+            circles.forEach((circle) => {
+                circle.style.transform = "scale(1.5)";
+            });
+            setTimeout(() => {
+                circles.forEach((circle) => {
+                    circle.style.transform = "scale(1)";
+                });
+            }, 200);
+        });
+
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+
+            circles.forEach(function (circle, index) {
+                circle.style.left = circle.x - 12 + "px";
+                circle.style.top = circle.y - 12 + "px";
+
+                circle.style.scale = (circles.length - index) / circles.length;
+
+                circle.x = x;
+                circle.y = y;
+
+                const nextCircle = circles[index + 1] || circles[0];
+
+                x += (nextCircle.x - x) * 0.2;
+                y += (nextCircle.y - y) * 0.2;
+            });
+
+            requestAnimationFrame(animateCircles);
+        }
+        animateCircles();
+    </script>
+
+    <!-- CURSOR DESIGN ENDS -->
+
+
+
 </body>
+
 </html>
