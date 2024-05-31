@@ -137,6 +137,56 @@
 
     <!-- CURSOR DESIGN ENDS -->
 
+
+    <!-- -----------------------pre loader--------------------------- -->
+
+    <div class="loader">
+        <img src="/assets/v.gif" alt="" />
+      </div>
+  
+      <script>
+        const loader = document.querySelector(".loader");
+  
+        window.addEventListener("load", function () {
+          loader.classList.add("disappear");
+        });
+      </script>
+  
+      <style>
+        .loader {
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(36deg,#C0D9B0, #1C9931 50%,#C0D9B0 50%, #67924c);
+          z-index: 9999999;
+        }
+        .loader img{
+          width: 50%;
+          height: 80%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+  
+        }
+  
+        .disappear {
+          animation: vanish 2s forwards;
+        }
+  
+        @keyframes vanish {
+  
+          100% {
+            opacity: 0;
+            visibility: hidden;
+          }
+        }
+      </style>
+  
+      <!-- -----------------------pre loader--------------------------- -->
+
     
     <!-----  personal portofolio website  !----->
      
