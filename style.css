@@ -1,6 +1,6 @@
 :root {
   --highlight-color: #cea8f1;
-  --highlight-color: #fac466;
+  --highlight-color: #4a4747;
 }
 
 * {
@@ -14,8 +14,9 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background-color: #f4eed8;
-  color: white;
+    background-color: #ece9c2;
+    /* background-color: #c1b893; */
+  /* color: white; */
 }
 
 a {
@@ -60,35 +61,42 @@ nav ul li:hover{
 
 /* ============================================    nav         ========================================== */
 nav {
-  background-color: #d9d9d9;
+  /* background-color: #d9d9d9; */
   width: 100%;
   height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 }
 .brand-icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  /* background-color: white; */
   /* margin: 10px 20px; */
 
   /* ctrl+/ */
 
   width: 20%;
   height: 80px;
+  
+}
+.brand-icon h1{
+  color: black;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 a {
   text-decoration: none;
 }
 
 .nav-links {
-  background-color: #fefefe;
+  /* background-color: #fefefe; */
   width: 80%;
   height: 80px;
   justify-content: end;
   display: flex;
+  
 }
 
 .nav-links ul {
@@ -96,10 +104,12 @@ a {
   font-display: row;
   justify-content: space-between;
   align-items: center;
+  
 }
 nav ul li {
   list-style-type: none;
   padding-left: 1rem;
+
 }
 nav {
   padding: 0 1rem;
@@ -108,6 +118,7 @@ nav {
 nav .nav-links a:hover {
   text-decoration: underline;
   text-underline-offset: 1rem;
+  
 }
 
 section .demo {
@@ -126,8 +137,8 @@ section{
     border-bottom: .1rem dashed black;
 }
 .home{
-    background-color: #033603;
-    color: white;
+    background-color: #ece9c2;
+    color: rgb(14, 13, 13);
 }
 .row
 {
@@ -144,7 +155,13 @@ section{
 .row .left
 {
     width: 50%;
+    font-family: sans-serif;
     display: flex;justify-content: center;
+}
+.row .left h6{
+  font-size: 100%;
+  font-weight:normal;
+  
 }
 
 .row .right
